@@ -8,7 +8,7 @@ Forked OSS (gothinkster RealWorld contract, MIT). Overlay harness only — no co
 | --- | --- |
 | `config/programme.yaml` | Identity: slug `realworld`, org `drivestream-lab` |
 | `config/governance-drivestream-lab.yaml` | Teams, repos, gitflow, board **RealWorld** |
-| `config/harness-drivestream-lab.yaml` | Constitution + skills per stack |
+| `config/harness-drivestream-lab.yaml` | Skills per stack; web has no Next.js constitution |
 | `config/scaffold-drivestream-lab.yaml` | All scaffolds **off** |
 | `config/service-catalog-drivestream-lab.yaml` | Service map |
 | `config/upstream.yaml` | Pinned FastAPI + React SHAs |

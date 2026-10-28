@@ -6,7 +6,7 @@ org: drivestream-lab
 stack_profiles:
   meta-pm: Programme management & ADR meta repo
   python-backend: Python / FastAPI microservice
-  react-frontend: React SPA (repo .mdc overlay, not Next.js)
+  nextjs-frontend: React SPA overlay (prayog profile name; no nextjs-bff-rules constitution)
   compose-local: Local Docker Compose (apps only, joins adh_local)
 
 teams:
@@ -40,7 +40,7 @@ repos:
     description: Forked FastAPI RealWorld API (overlay harness, shared DB realworld)
 
   realworld-web:
-    stack: react-frontend
+    stack: nextjs-frontend
     teams: [platform-devs, frontend-devs]
     visibility: public
     description: Forked React RealWorld SPA (overlay harness)

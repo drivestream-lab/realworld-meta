@@ -29,7 +29,7 @@ profiles:
       team: backend-devs
       layout: app_src
 
-  react-frontend:
+  nextjs-frontend:
     skills:
       - repo: prayog-skills
         ref: v0.5.6

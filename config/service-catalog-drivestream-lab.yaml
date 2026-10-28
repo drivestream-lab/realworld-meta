@@ -21,7 +21,7 @@ services:
       repo: https://github.com/drivestream-lab/realworld-api
 
   realworld-web:
-    stack: react-frontend
+    stack: nextjs-frontend
     description: Forked React RealWorld SPA
     status: live
     teams: [platform-devs, frontend-devs]
