@@ -1,0 +1,62 @@
+apiVersion: launchpad/v1
+kind: GovernanceConfig
+
+org: drivestream-lab
+
+stack_profiles:
+  meta-pm: Programme management & ADR meta repo
+  python-backend: Python / FastAPI microservice
+  react-frontend: React SPA (repo .mdc overlay, not Next.js)
+  compose-local: Local Docker Compose (apps only, joins adh_local)
+
+teams:
+  - name: platform-devs
+    description: Platform engineering
+    privacy: closed
+  - name: backend-devs
+    description: Backend developers
+    privacy: closed
+  - name: frontend-devs
+    description: Frontend developers
+    privacy: closed
+  - name: pm-team
+    description: Programme management
+    privacy: closed
+  - name: release-managers
+    description: Merge to main only
+    privacy: closed
+
+repos:
+  realworld-meta:
+    stack: meta-pm
+    teams: [platform-devs, pm-team]
+    visibility: public
+    description: RealWorld tenant control-plane — catalog, INIT outline, upstream pins
+
+  realworld-api:
+    stack: python-backend
+    teams: [platform-devs, backend-devs]
+    visibility: public
+    description: Forked FastAPI RealWorld API (overlay harness, shared DB realworld)
+
+  realworld-web:
+    stack: react-frontend
+    teams: [platform-devs, frontend-devs]
+    visibility: public
+    description: Forked React RealWorld SPA (overlay harness)
+
+  realworld-local:
+    stack: compose-local
+    teams: [platform-devs]
+    visibility: public
+    description: RealWorld api+web compose joining adh_local — no second Postgres
+
+policy:
+  default_branch: main
+  integration_branch: develop
+  require_pr_reviews: 1
+  dismiss_stale_reviews: true
+
+project_board:
+  enabled: true
+  name: "RealWorld"

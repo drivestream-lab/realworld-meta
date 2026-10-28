@@ -1,0 +1,9 @@
+apiVersion: launchpad/v1
+kind: Programme
+
+programme: RealWorld
+programme_slug: realworld
+org: drivestream-lab
+meta_repo: realworld-meta
+forge:
+  provider: github

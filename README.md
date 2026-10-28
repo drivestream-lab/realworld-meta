@@ -1,0 +1,21 @@
+# realworld-meta
+
+Control-plane for the **RealWorld** proof tenant in `drivestream-lab`.
+
+Forked OSS (gothinkster RealWorld contract, MIT). Overlay harness only — no cookiecutter replace.
+
+| File | Purpose |
+| --- | --- |
+| `config/programme.yaml` | Identity: slug `realworld`, org `drivestream-lab` |
+| `config/governance-drivestream-lab.yaml` | Teams, repos, gitflow, board **RealWorld** |
+| `config/harness-drivestream-lab.yaml` | Constitution + skills per stack |
+| `config/scaffold-drivestream-lab.yaml` | All scaffolds **off** |
+| `config/service-catalog-drivestream-lab.yaml` | Service map |
+| `config/upstream.yaml` | Pinned FastAPI + React SHAs |
+
+Factory secrets live in `~/.config/launchpad/env.d/realworld.env` — never commit them.
+
+```bash
+launchpad --client realworld doctor
+launchpad --client realworld status --meta
+```

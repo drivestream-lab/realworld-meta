@@ -1,0 +1,37 @@
+apiVersion: launchpad/v1
+kind: ServiceCatalog
+
+org: drivestream-lab
+
+services:
+  realworld-meta:
+    stack: meta-pm
+    description: RealWorld tenant control-plane
+    status: live
+    teams: [platform-devs, pm-team]
+    links:
+      repo: https://github.com/drivestream-lab/realworld-meta
+
+  realworld-api:
+    stack: python-backend
+    description: Forked FastAPI RealWorld API
+    status: live
+    teams: [platform-devs, backend-devs]
+    links:
+      repo: https://github.com/drivestream-lab/realworld-api
+
+  realworld-web:
+    stack: react-frontend
+    description: Forked React RealWorld SPA
+    status: live
+    teams: [platform-devs, frontend-devs]
+    links:
+      repo: https://github.com/drivestream-lab/realworld-web
+
+  realworld-local:
+    stack: compose-local
+    description: api+web compose on adh_local using DB realworld
+    status: live
+    teams: [platform-devs]
+    links:
+      repo: https://github.com/drivestream-lab/realworld-local

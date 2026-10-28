@@ -1,0 +1,53 @@
+apiVersion: launchpad/v1
+kind: HarnessConfig
+delivery_contract: sdd-delivery/v2
+delivery_roles:
+  engineering-gate: platform-devs
+
+org: drivestream-lab
+
+profiles:
+  meta-pm:
+    skills:
+      - repo: prayog-skills
+        ref: v0.5.6
+    skill_runtimes:
+      - .agents/skills
+      - .claude/skills
+    owners:
+      team: pm-team
+      layout: meta
+
+  python-backend:
+    constitution:
+      repo: python-services-rules
+      ref: v0.5.12
+    skills:
+      - repo: prayog-skills
+        ref: v0.5.6
+    owners:
+      team: backend-devs
+      layout: app_src
+
+  react-frontend:
+    skills:
+      - repo: prayog-skills
+        ref: v0.5.6
+    skill_runtimes:
+      - .agents/skills
+      - .claude/skills
+    owners:
+      team: frontend-devs
+      layout: app_src
+
+  compose-local:
+    skills:
+      - repo: prayog-skills
+        ref: v0.5.6
+    skill_runtimes:
+      - .agents/skills
+    owners:
+      team: platform-devs
+      layout: meta
+
+repos: {}

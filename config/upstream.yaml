@@ -1,0 +1,20 @@
+apiVersion: adh/v1
+kind: UpstreamPin
+
+contract: gothinkster/realworld
+license: MIT
+
+api:
+  upstream: nsidnev/fastapi-realworld-example-app
+  sha: 029eb7781c60d5f563ee8990a0cbfb79b244538c
+  date: "2022-08-21"
+  fork: drivestream-lab/realworld-api
+
+web:
+  upstream: gothinkster/react-redux-realworld-example-app
+  sha: ee72eba4056392c95a27bc48d385d3f54ba38a18
+  date: "2021-09-07"
+  archived: true
+  fork: drivestream-lab/realworld-web
+
+notes: Overlay harness only. Do not cookiecutter-replace. Compose in realworld-local joins adh_local and uses Postgres DB realworld.

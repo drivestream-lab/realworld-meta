@@ -1,0 +1,22 @@
+apiVersion: launchpad/v1
+kind: ScaffoldConfig
+
+org: drivestream-lab
+
+# Overlay harness only. Do not cookiecutter-replace the RealWorld forks.
+meta:
+  enabled: false
+  engine: cookiecutter
+
+repos:
+  realworld-api:
+    enabled: false
+    engine: cookiecutter
+
+  realworld-web:
+    enabled: false
+    engine: cookiecutter
+
+  realworld-local:
+    enabled: false
+    engine: cookiecutter
