@@ -15,6 +15,8 @@ Forked OSS (gothinkster RealWorld contract, MIT). Overlay harness only — no co
 
 Factory secrets live in `~/.config/launchpad/env.d/realworld.env` — never commit them.
 
+GitHub Apps: `adh-dev-backend` and `adh-reviewer` are installed on **all** org repos, so they already cover these forks. `adh-dev-frontend` still needs an org install (the App JWT has zero installations). Install URL: https://github.com/apps/adh-dev-frontend/installations/new
+
 ```bash
 launchpad --client realworld doctor
 launchpad --client realworld status --meta
