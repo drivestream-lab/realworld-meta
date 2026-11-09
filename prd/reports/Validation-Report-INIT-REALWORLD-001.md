@@ -2,16 +2,16 @@
 
 **Document:** `prd/INIT-REALWORLD-001.md`
 **Initiative:** INIT-REALWORLD-001
-**Validated on:** 2026-11-06
-**report_revision:** 4
-**previous_revision:** 3
+**Validated on:** 2026-11-09
+**report_revision:** 5
+**previous_revision:** 4
 **Sources checked:** 4 source documents
 **Checks run:** 15 (11 semantic + 4 structural)
-**Mode:** Incremental (prior report: `prd/reports/Validation-Report-INIT-REALWORLD-001.md`, revision 3, 2026-11-06)
-**Changes detected:** 6 sections modified (§5 CAP table, §6 REQ-01 + REQ-29, §7 negatives, §8 CTR-05, §9 Security NFR, §10 A-04, §12 J-11, §13 domain terms, OST + closing), 2 REQ/CAP changed (REQ-01 text; REQ-29 added; CAP-01/CAP-04 journeys), 4 sources unchanged
-**Checks re-run:** 7, 9, 11, S1, S2, S3, S4
-**Checks carried forward:** 1, 2, 3, 4, 5, 6, 8, 10 (no relevant FR/source/sibling input changes since 2026-11-06 beyond targeted CHG fixes)
-**Prior findings resolved:** 5 (VF-02, VF-03, VF-04, VF-05, VF-06 fixed via `/update-documents` from `Resolution-INIT-REALWORLD-001.md`; VF-01 already resolved since rev 2)
+**Mode:** Incremental (prior report: `prd/reports/Validation-Report-INIT-REALWORLD-001.md`, revision 4, 2026-11-06)
+**Changes detected:** 0 sections modified, 0 REQ/CAP changed, 4 sources unchanged
+**Checks re-run:** 11, S1, S2, S3, S4
+**Checks carried forward:** 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 (no FR/source/sibling/scope input changes since 2026-11-06)
+**Prior findings resolved:** 0
 **Prior findings carried forward:** 0
 **New findings:** 0
 
@@ -25,9 +25,9 @@
 | 4. Over-Generalization | 0 | PASS | Carried forward |
 | 5. Scope Boundary | 0 | SKIPPED | Carried forward |
 | 6. Testability | 0 | PASS | Carried forward |
-| 7. Ambiguity | 0 | PASS | Re-run |
+| 7. Ambiguity | 0 | PASS | Carried forward |
 | 8. Assumption-Req Dependency | 0 | PASS | Carried forward |
-| 9. Negative Path Coverage | 0 | PASS | Re-run |
+| 9. Negative Path Coverage | 0 | PASS | Carried forward |
 | 10. Actor Capability | 0 | PASS | Carried forward |
 | 11. Intra-Document Consistency | 0 | PASS | Always re-run |
 
@@ -44,14 +44,7 @@
 
 ## Resolved (fixed since prior report)
 
-| VF | Was | Resolution applied |
-|----|-----|--------------------|
-| VF-01 | Critical promote-header residue (rev 1–2) | Already resolved since rev 2 — header/title/§0 promoted; CHG-01 no-op this pass |
-| VF-02 | Closing Stop + OST “this candidate” framing | CHG-02 — closing is **Promoted** next-step framing; OST A = “this PRD”; domain terms softened |
-| VF-03 | CAP-01 journeys missing J-14, J-16 | CHG-03 — CAP-01 journeys = `J-01, J-05, J-09, J-14, J-15, J-16` |
-| VF-04 | CAP-04 journeys missing J-12 | CHG-04 — CAP-04 journeys = `J-04, J-11, J-12, J-13` |
-| VF-05 | REQ-01 “and/or summary” escape hatch | CHG-05 — required cues title + author + tags; summary optional |
-| VF-06 | No guest favorites-list view negative | CHG-06 — REQ-29 + §7 row + CTR-05 / J-11 / Security / A-04 updates |
+None — prior revision 4 already reported zero open findings; no new `/update-documents` pass since then.
 
 ## Critical (MUST FIX — factually wrong or misleading)
 
@@ -78,29 +71,28 @@ None.
 | 3. Requirement Purity | Carried forward PASS — REQ rows remain WHAT/observable; service names stay in seams/scope. |
 | 4. Over-Generalization | Carried forward PASS — scope still matches Hermes locking; non-goals hold. |
 | 5. Scope Boundary | SKIPPED (carried) — no sibling requirements docs in `prd/` (only this INIT + README). |
-| 6. Testability | Carried forward PASS — Condition/event + Observable result present; REQ-01 cue set now locked. |
-| 7. Ambiguity | Re-run PASS — REQ-01 no longer uses “and/or summary”; minimum cue set is title + author + tags. |
-| 8. Assumption-Req Dependency | Carried forward PASS — A-01..A-08 accepted; A-04 now also cites REQ-29. |
-| 9. Negative Path Coverage | Re-run PASS — REQ-29 covers unauthenticated open of private favorites list (view path). |
+| 6. Testability | Carried forward PASS — Condition/event + Observable result present; REQ cue sets locked. |
+| 7. Ambiguity | Carried forward PASS — no weak-modal / escape-hatch regressions in REQ rows since rev 4. |
+| 8. Assumption-Req Dependency | Carried forward PASS — A-01..A-08 accepted with Dependent REQs filled. |
+| 9. Negative Path Coverage | Carried forward PASS — §7 covers auth, ownership, guest gate, abandon-join, empty states, delete hygiene, REQ-29 favorites-list view. |
 | 10. Actor Capability | Carried forward PASS — Guest / Member / Former session match Hermes actor lock. |
-| 11. Intra-Document Consistency | Re-run PASS — CAP↔journey tables match §12 Caps exercised for CAP-01 and CAP-04. |
-| S1. Staleness | Re-run PASS — closing no longer routes to `/prd-quality` / do-not-promote. |
-| S2. Contradictions | Re-run PASS — OST / closing align with `Status \| promoted`. |
-| S3. Cross-References | Re-run PASS — REQ-01..29, CAP-01..05, J-01..17, OQ-01..09, A-01..08, CTR-01..06 resolve; live Evidence cites CAP and/or J. |
-| S4. Completeness | Re-run PASS — CAP journey coverage complete vs §12; guest favorites-view negative present. |
+| 11. Intra-Document Consistency | Re-run PASS — CAP↔§12 Caps exercised bidirectional match for CAP-01..05 / J-01..17; §7 / CTR / NFR / A-04 / J-11 align on REQ-29; OST + closing match `Status \| promoted`. |
+| S1. Staleness | Re-run PASS — no `[PENDING]` / `[TBD]` / `[UNKNOWN]` / `[OPEN]` markers; assumption statuses accepted; closing is promoted next-step framing. |
+| S2. Contradictions | Re-run PASS — in-scope vs non-goals, guest/member privileges, favorites privacy, and OST recommendation agree. |
+| S3. Cross-References | Re-run PASS — REQ-01..29, CAP-01..05, J-01..17, OQ-01..09, A-01..08, CTR-01..06 resolve; every Evidence cell with `live` cites CAP and/or J; zero undefined id refs. |
+| S4. Completeness | Re-run PASS — CAP journey coverage complete; no empty tables; OQs have owners; guest favorites-view negative present. |
 
 ### Change manifest (this run)
 
 | Change | What changed | Sections affected | REQ/CAP affected |
 |---|---|---|---|
-| CHG-02..06 applied | `/update-documents` from Resolution | §5–§13, OST, closing | CAP-01, CAP-04, REQ-01, REQ-29 |
-| VF-02..06 resolved | Targeted text no longer present | closing, §5, §6, §7 | same |
+| None | PRD mtime ≤ prior validation write; no Change History deltas after 2026-11-06 | — | none |
 
 ### Inputs inventory (this run)
 
 | Input | Path / status |
 |-------|----------------|
-| Requirements document | `prd/INIT-REALWORLD-001.md` (REQUIRED; modified this pass) |
+| Requirements document | `prd/INIT-REALWORLD-001.md` (REQUIRED; unchanged since prior validation) |
 | SRC-1 Hermes promote brief | `prd/reports/INIT-REALWORLD-001-hermes-promote-brief.md` (unchanged) |
 | SRC-2 C4 think (provenance) | `prd/reports/INIT-REALWORLD-001-prd-think-4.md` (unchanged) |
 | SRC-3 Quality report | `prd/reports/INIT-REALWORLD-001-prd-quality.md` (unchanged) |
@@ -108,16 +100,14 @@ None.
 | Sibling requirements | None in `prd/` |
 | Stage4 Scenario Matrix | Unavailable |
 | Stage6 User Flows | Unavailable |
-| Prior validation report | `prd/reports/Validation-Report-INIT-REALWORLD-001.md` rev 3 → **Incremental mode** |
-| Resolution | `prd/reports/Resolution-INIT-REALWORLD-001.md` — CHG-01..06 `fix` applied (CHG-01 no-op) |
+| Prior validation report | `prd/reports/Validation-Report-INIT-REALWORLD-001.md` rev 4 → **Incremental mode** |
 
 ---
 
 ## Recommended Next Steps
 
-1. **Confirm clean validation** — this revision reports zero open findings after `/update-documents`.
-2. **Impact map** — When this pass stands, run `/prd-impact-map` for INIT-REALWORLD-001.
-3. **Optional forge** — When ready to publish workspace tree, `/commit-workspace` (`handoff.forge.action: commit_workspace`). Do not open a GitHub PR from this stage.
+1. **Impact map** — Validation is clean (0 findings). Run `/prd-impact-map` for INIT-REALWORLD-001.
+2. **Optional forge** — When ready to publish workspace tree, `/commit-workspace` (`handoff.forge.action: commit_workspace`). Do not open a GitHub PR from this stage.
 
 ```yaml
 handoff:
@@ -129,20 +119,13 @@ handoff:
   blockers: []
   signals:
     mode: incremental
-    report_revision: 4
-    previous_revision: 3
-    prior_findings_resolved:
-      - VF-02
-      - VF-03
-      - VF-04
-      - VF-05
-      - VF-06
+    report_revision: 5
+    previous_revision: 4
+    prior_findings_resolved: []
     checks_failed: []
     checks_skipped:
       - "5"
     checks_re_run:
-      - "7"
-      - "9"
       - "11"
       - S1
       - S2
@@ -155,7 +138,9 @@ handoff:
       - "4"
       - "5"
       - "6"
+      - "7"
       - "8"
+      - "9"
       - "10"
   next_candidates:
     - prd-impact-map
